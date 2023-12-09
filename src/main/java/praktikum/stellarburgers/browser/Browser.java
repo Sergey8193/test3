@@ -31,7 +31,8 @@ public class Browser {
         ChromeOptions options = getChromeOptions();
         switch (getOperatingSystem()) {
             case MAC_OS:
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver-mac");
+                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-mac-mac");
+                //System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver-mac");
                 options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
                 break;
             case WINDOWS:
@@ -71,10 +72,6 @@ public class Browser {
             case EDGE: driver = new EdgeDriver();
                 break;
             case CHROME:  driver = new ChromeDriver(getChromeOptions());
-                break;
-            case SAFARI:  driver = Objects.equals(getOperatingSystem(), MAC_OS)
-                    ? new SafariDriver()
-                    : new ChromeDriver(getChromeOptions());
                 break;
             case YANDEX:  driver = new ChromeDriver(getYandexOptions());
                 break;

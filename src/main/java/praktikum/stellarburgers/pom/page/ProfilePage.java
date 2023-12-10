@@ -11,17 +11,8 @@ public class ProfilePage extends AccountBasePage {
     private static final By INPUT_EMAIL = By.xpath(".//label[text()='Email']/parent::div/input");
     private static final By INPUT_PASSWORD = By.xpath(".//input[@type='password' and @name='Пароль']");
 
-    private static final By BUTTON_CANCEL = By.xpath(".//div[@class='Profile_buttonBox__1JlBI']/button[contains(@class, 'type_secondary__3-tsA']");
-    private static final By BUTTON_SAVE = By.xpath(".//div[@class='Profile_buttonBox__1JlBI']/button[contains(@class, 'type_primary__1O7Bx']");
-
     public ProfilePage(WebDriver driver) {
         super(driver);
-    }
-
-    @Step("Open 'Profile' page")
-    public ProfilePage openProfilePage() {
-        driver.get(PROFILE_URL);
-        return this;
     }
 
     @Step("Wait until 'Profile' page to be displayed")
@@ -69,21 +60,5 @@ public class ProfilePage extends AccountBasePage {
     public String getName() {
         waitUntilPageElementToBeClickable(INPUT_PASSWORD);
         return driver.findElement(INPUT_PASSWORD).getText();
-    }
-
-    @Step("Click 'Cancel' Button")
-    public ProfilePage clickCancelButton() {
-        waitUntilPageElementToBeClickable(BUTTON_CANCEL);
-        driver.findElement(BUTTON_CANCEL).click();
-        waitUntilLoadingAnimationImageToBeInvisible();
-        return this;
-    }
-
-    @Step("Click 'Save' Button")
-    public ProfilePage clickSaveButton() {
-        waitUntilPageElementToBeClickable(BUTTON_SAVE);
-        driver.findElement(BUTTON_SAVE).click();
-        waitUntilLoadingAnimationImageToBeInvisible();
-        return this;
     }
 }

@@ -8,7 +8,6 @@ import static io.restassured.RestAssured.given;
 
 public class UserClient extends RestClient {
     private static final String USER_URL = BASE_URL + "auth/";
-    private static final String CREATE_USER_URL = "https://stellarburgers.nomoreparties.site/api/auth/";
 
     @Step("POST createUser UserRegistrationData {userRegistrationData}")
     public ValidatableResponse createUser(UserRegistrationData userRegistrationData) {
@@ -16,7 +15,7 @@ public class UserClient extends RestClient {
                 .spec(getRequestSpecification())
                 .body(userRegistrationData)
                 .when()
-                .post(CREATE_USER_URL + "register/")
+                .post(USER_URL + "register/")
                 .then();
     }
 
@@ -36,7 +35,7 @@ public class UserClient extends RestClient {
                 .spec(getRequestSpecification(accessToken))
                 .body(userRegistrationData)
                 .when()
-                .patch(USER_URL + "praktikum/stellarburgers/user/")
+                .patch(USER_URL + "user/")
                 .then();
     }
 
@@ -55,7 +54,7 @@ public class UserClient extends RestClient {
         return given()
                 .spec(getRequestSpecification(accessToken))
                 .when()
-                .delete(USER_URL + "praktikum/stellarburgers/user/")
+                .delete(USER_URL + "user/")
                 .then();
     }
 }

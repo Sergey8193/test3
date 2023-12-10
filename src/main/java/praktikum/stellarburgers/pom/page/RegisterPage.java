@@ -20,27 +20,15 @@ public class RegisterPage extends BasePage {
     private static final By LINK_LOGIN_PAGE = By.xpath(".//a[@href='/login']");
 
     private static final By TEXT_INCORRECT_PASSWORD = By.xpath(".//p[text()='Некорректный пароль']");
-    private static final By TEXT_INPUT_ERROR = By.xpath(".//div[contains(@class, 'Auth_form__3qKeq')]/p[contains(@class, 'input__error')]");
     private static final By TEXT_ALREADY_EXISTS = By.xpath(".//p[text()='Такой пользователь уже существует']");
 
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
 
-    @Step("Open 'Main' Page")
-    public RegisterPage openRegisterPage() {
-        driver.get(REGISTER_URL);
-        return this;
-    }
-
     @Step("Wait until 'Main' Page to be displayed")
     public RegisterPage waitUntilRegisterPageToBeDisplayed() {
         waitUntilPageToBeDisplayed(TEXT_REGISTER);
-        return this;
-    }
-
-    public RegisterPage waitUntilLoadingAnimationToBeInvisible() {
-        waitUntilLoadingAnimationImageToBeInvisible();
         return this;
     }
 
@@ -68,11 +56,6 @@ public class RegisterPage extends BasePage {
     public boolean checkThatPasswordErrorMessageIsDisplayed() {
         isWaitOrderDisplayed(TEXT_INCORRECT_PASSWORD);
         return driver.findElement(TEXT_INCORRECT_PASSWORD).isDisplayed();
-    }
-
-    public boolean getRegistrationText() {
-        isWaitOrderDisplayed(TEXT_REGISTER);
-        return driver.findElement(TEXT_REGISTER).isDisplayed();
     }
 
     public boolean checkThatEmailErrorMessageIsDisplayed() {

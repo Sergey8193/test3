@@ -17,28 +17,10 @@ public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver) { super(driver); }
 
-    @Step("Open 'Login' page")
-    public LoginPage openLoginPage() {
-        driver.get(LOGIN_URL);
-        return this;
-    }
-
     @Step("Wait until 'Login' page to be displayed")
     public LoginPage waitUntilLoginPageToBeDisplayed() {
         waitUntilPageDocumentToBeReady();
         waitUntilPageElementToBeDisplayed(TEXT_ENTRANCE);
-        return this;
-    }
-
-    @Step("Wait until 'Login' Page to be ready")
-    public LoginPage waitUntilMainPageDocumentToBeReady() {
-        waitUntilPageDocumentToBeReady();
-        return this;
-    }
-
-    @Step("Wait until 'Loading animation' to be invisible")
-    public LoginPage waitUntilLoadingAnimationToBeInvisible(){
-        waitUntilLoadingAnimationImageToBeInvisible();
         return this;
     }
 

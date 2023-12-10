@@ -32,15 +32,8 @@ public class MainPage extends BasePage {
     public static final By INGREDIENT_LIST = By.xpath(".//div[contains(@class, 'Container__Xu3Mo')]/ul");
     public static final By INGREDIENT = By.xpath(".//a");
     public static final By BASKET = By.xpath(".//section[contains(@class, 'BurgerConstructor_basket__29Cd7 mt-25 ')]");
-    public static final By BASKET_LIST_ITEM = By.xpath(".//section[contains(@class, 'BurgerConstructor_basket__29Cd7 mt-25 ')]/ul//li");
-//    public static final By BASKET_BUN_LIST_ITEM = By.xpath(".//section[contains(@class, 'BurgerConstructor_basket__29Cd7 mt-25 ')]/ul//li");
-//    public static final By BASKET_SAUCE_AND_TOPPING_LIST_ITEM = By.xpath(".//span[contains(@class, 'BurgerConstructor_basket__listContainer__3P_AM')]/li");
     public static final By BASKET_BUN_LIST_ITEM = By.xpath(".//section[contains(@class, 'BurgerConstructor_basket__29Cd7 mt-25 ')]/ul//li[contains(@class, 'listItem__aWMu1 mr-4')]");
     public static final By BASKET_SAUCE_AND_TOPPING_LIST_ITEM = By.xpath(".//span[contains(@class, 'BurgerConstructor_basket__listContainer__3P_AM')]/li[contains(@class, 'listItem__3yMU_ mb-4 mr-2')]");
-
-
-    // li class BurgerConstructor_basket__listItem__aWMu1 mr-4  - bun
-    // li class BasketItem_basketItem__listItem__3yMU_ mb-4 mr-2 - ingredient
 
     public static final By BUTTON_MODAL_CLOSE = By.xpath(".//section[@class='Modal_modal_opened__3ISw4 Modal_modal__P3_V5']//button[@class='Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK']");
     public static final By H2_MODAL_ORDER_ID = By.xpath(".//section[@class='Modal_modal_opened__3ISw4 Modal_modal__P3_V5']//h2[@class='Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8']");
@@ -61,27 +54,14 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    @Step("Wait until 'Main' Page to be ready")
-    public MainPage waitUntilMainPageDocumentToBeReady() {
-        waitUntilPageDocumentToBeReady();
-        return this;
-    }
-
-    @Step("Wait until 'Loading animation' to be invisible")
-    public MainPage waitUntilLoadingAnimationToBeInvisible(){
-        waitUntilLoadingAnimationImageToBeInvisible();
-        return this;
-    }
-
     public Integer getOrderId() {
         String orderId = driver.findElement(H2_MODAL_ORDER_ID).getText();
         if (Objects.equals(orderId, "")) { orderId = "9999"; }
         return Integer.valueOf(orderId);
     }
 
-    public MainPage closeModalWindow() {
+    public void closeModalWindow() {
         driver.findElement(BUTTON_MODAL_CLOSE).click();
-        return this;
     }
 
     private List<WebElement> getIngredientList(int ingredientType) {
@@ -94,11 +74,9 @@ public class MainPage extends BasePage {
     private List<WebElement> getToppings() { return getIngredientList(TOPPING); }
     private WebElement getBasket() { return driver.findElement(BASKET); }
 
-    private List<WebElement> getBasketList() { return driver.findElements(BASKET_LIST_ITEM); }
     private List<WebElement> getBasketBunList() { return driver.findElements(BASKET_BUN_LIST_ITEM); }
     private List<WebElement> getBasketSauceAndToppingList() { return driver.findElements(BASKET_SAUCE_AND_TOPPING_LIST_ITEM ); }
 
-    public int getBasketListSize() { return getBasketList().size(); }
     public int getBasketBunListSize() { return getBasketBunList().size(); }
     public int getBasketSauceAndToppingListSize() { return getBasketSauceAndToppingList().size(); }
 
@@ -166,7 +144,6 @@ public class MainPage extends BasePage {
 
     @Step("Click 'Toppings' Tab")
     public MainPage clickToppingsTab() {
-//        waitUntilPageElementToBeDisplayed(ACTIVE_TAB_BUNS);
         waitUntilPageElementToBeClickable(TAB_TOPPINGS);
         driver.findElement(TAB_TOPPINGS).click();
         return this;
@@ -198,20 +175,6 @@ public class MainPage extends BasePage {
         waitUntilPageElementToBeDisplayed(ACTIVE_TAB_TOPPINGS);
         waitUntilPageElementToBeClickable(ACTIVE_TAB_TOPPINGS);
         return driver.findElement(ACTIVE_TAB_TOPPINGS).isEnabled();
-    }
-
-    @Step("Wait until 'Order' Button To be clickable")
-    public MainPage waitUntilOrderButtonToBeClickable() {
-        waitUntilPageElementToBeDisplayed(BUTTON_ORDER_BURGER);
-        waitUntilPageElementToBeClickable(BUTTON_ORDER_BURGER);
-        return this;
-    }
-
-    @Step("Check that 'Order' Button is enabled")
-    public boolean checkThatOrderButtonIsEnabled() {
-        waitUntilPageElementToBeDisplayed(BUTTON_ORDER_BURGER);
-        waitUntilPageElementToBeClickable(BUTTON_ORDER_BURGER);
-        return driver.findElement(BUTTON_ORDER_BURGER).isEnabled();
     }
 
     @Step("Wait until 'Order' to be completed")

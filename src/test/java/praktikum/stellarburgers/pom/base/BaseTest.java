@@ -46,12 +46,6 @@ public class BaseTest {
         this.userState = userState;
     }
 
-    protected UserStatus getUserStatusFromSystemProperty(UserStatus defaultUserStatus) {
-        return Objects.equals(System.getProperty("login"), null)
-                ? defaultUserStatus
-                : Objects.equals(System.getProperty("login"), "true") ? AUTHORIZED_USER : ANONYMOUS_USER;
-    }
-
     protected void getBrowserAndPrepareUserData() {
         driver = getDriver(browserType);
 
@@ -83,17 +77,8 @@ public class BaseTest {
     }
 
     protected void closeBrowserAndCleanUpUserData() {
-        if (Objects.equals(userState, LOGGED_IN_USER)) {
-            if (!Objects.equals(mainPage, null)) {
-                mainPage.clickLoggedInUserPersonalAreaLink()
-                        .waitUntilProfilePageToBeDisplayed()
-                        .clickExitButton()
-                        .waitUntilLoginPageToBeDisplayed();
-            }
-        }
         if (!Objects.equals(accessToken, null) && !accessToken.isBlank()) {
-            int statusCode = userClient.deleteUser(accessToken).extract().statusCode();
-            System.out.printf("deleteUser(statusCode: %d, accessToken: %s)\n", statusCode, accessToken);
+            userClient.deleteUser(accessToken);
         }
         if (!Objects.equals(driver, null)) { driver.quit(); }
     }

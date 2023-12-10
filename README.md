@@ -32,7 +32,7 @@ Report folder: ```target/allure-results```
 
 When using the "browser" system property in a non-parameterized test, 
 the test will be executed for the specified browser
-List of supported "browser" values: ```'crome', 'yandex', 'edge', 'firefox' ```
+List of supported "browser" values: ```'chrome', 'yandex', 'edge', 'firefox' ```
 
 For example (```mvn clean test -Dtest=OrderHistoryPageTest -Dbrowser=edge```)
 

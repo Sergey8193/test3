@@ -124,7 +124,7 @@ src
 
 ## Completed tasks
 
-Created auto Web UI tests of basic functionality:
+**Created auto Web UI tests of basic functionality**
 - user registration
 - user authorization
 - creating an order

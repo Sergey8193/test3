@@ -51,16 +51,55 @@ src
 |   |-- java
 |   |   |-- praktikum
 |   |   |   |-- stellarburgers
-|   |   |   |   |-- model
-|   |   |   |   |   |-- mock
-|   |   |   |   |   |   |-- BurgerDataGenerator.java
-|   |   |   |   |   |   |-- StabGenerator.java
-|   |   |   |   |   |-- Bun.java
-|   |   |   |   |   |-- Burger.java
-|   |   |   |   |   |-- Database.java
-|   |   |   |   |   |-- Ingredient.java
-|   |   |   |   |   |-- IngredientType.java
-|   |   |   |   |-- Praktikum.java
+|   |   |   |   |-- browser
+|   |   |   |   |   |-- Browser.java
+|   |   |   |   |   |-- BrowserType.java
+|   |   |   |   |   |-- OsType.java
+|   |   |   |   |-- constants
+|   |   |   |   |   |-- RestClient.java
+|   |   |   |   |   |-- UserState.java
+|   |   |   |   |   |-- UserStatus.java
+|   |   |   |   |   |-- WayToLoginPage.java
+|   |   |   |   |-- ingredient
+|   |   |   |   |   |-- IngredientClient.java
+|   |   |   |   |   |-- IngredientData.java
+|   |   |   |   |   |-- IngredientsOrderDataGenerator.java
+|   |   |   |   |   |-- IngredientsSuccessInfo.java
+|   |   |   |   |-- order
+|   |   |   |   |   |-- CreateOrderOrderData.java
+|   |   |   |   |   |-- CreateOrderSuccessInfo.java
+|   |   |   |   |   |-- GetOrdersOrderData.java
+|   |   |   |   |   |-- GetOrdersSuccessInfo.java
+|   |   |   |   |   |-- OrderClient.java
+|   |   |   |   |   |-- OrderData.java
+|   |   |   |   |   |-- OrderDataGenerator.java
+|   |   |   |   |-- pom
+|   |   |   |   |   |-- base
+|   |   |   |   |   |   |-- AccountBasePage.java
+|   |   |   |   |   |   |-- BasePage.java
+|   |   |   |   |   |   |-- BaseWait.java
+|   |   |   |   |   |-- page
+|   |   |   |   |   |   |-- LoginPage.java
+|   |   |   |   |   |   |-- MainPage.java
+|   |   |   |   |   |   |-- OrderFeedPage.java
+|   |   |   |   |   |   |-- OrderHistoryPage.java
+|   |   |   |   |   |   |-- PasswordRecoveryPage.java
+|   |   |   |   |   |   |-- ProfilePage.java
+|   |   |   |   |   |   |-- RegisterPage.java
+|   |   |   |   |-- user
+|   |   |   |   |   |-- User
+|   |   |   |   |   |-- UserClient.java
+|   |   |   |   |   |-- UserContactInfo.java
+|   |   |   |   |   |-- UserCredentials.java
+|   |   |   |   |   |-- UserDataGenerator.java
+|   |   |   |   |   |-- UserRegistratioinData.java
+|   |   |   |   |   |-- UserCuccessInfo.java
+|   |   |   |   |   |-- UserToken.java
+|   |-- java
+|   |   |-- resources
+|   |   |   |-- yandexdriver.exe
+|   |   |   |-- yandexdriver-linux
+|   |   |   |-- yandexdriver-mac
 |-- test
 |   |-- java
 |   |   |-- praktikum

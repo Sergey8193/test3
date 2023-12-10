@@ -10,21 +10,6 @@ public class RestClient {
     protected static final String NO_ACCESS_TOKEN = null;
     protected static final String BASE_URL = "https://stellarburgers.nomoreparties.site/api/";
 
-//    protected RequestSpecification getRequestSpecification() {
-//        return new RequestSpecBuilder()
-//                .setContentType(ContentType.JSON)
-//                .setBaseUri(BASE_URL)
-//                .build();
-//    }
-//
-//    protected RequestSpecification getRequestAuthSpecification(String accessToken) {
-//        return new RequestSpecBuilder()
-//                .setContentType(ContentType.JSON)
-//                .addHeader("authorization", accessToken)
-//                .setBaseUri(BASE_URL)
-//                .build();
-//    }
-
     protected RequestSpecification getRequestSpecification(String accessToken) {
         RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)

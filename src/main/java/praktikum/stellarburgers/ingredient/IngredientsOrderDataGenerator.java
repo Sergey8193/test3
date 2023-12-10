@@ -63,12 +63,10 @@ public class IngredientsOrderDataGenerator {
             ingredientsIdList.add(mainIngredientsData.get(MAIN_INDEX).get_id());
         }
 
-        if (!Objects.equals(userSuccessInfo, null)) {
-            if (!Objects.equals(userSuccessInfo.getAccessToken(), null) &&
-                    (!userSuccessInfo.getAccessToken().isEmpty())) {
-                userClient.logoutUser(userSuccessInfo.getRefreshToken());
-                userClient.deleteUser(userSuccessInfo.getAccessToken());
-            }
+        if (!Objects.equals(userSuccessInfo.getAccessToken(), null) &&
+                (!userSuccessInfo.getAccessToken().isEmpty())) {
+            userClient.logoutUser(userSuccessInfo.getRefreshToken());
+            userClient.deleteUser(userSuccessInfo.getAccessToken());
         }
 
         return ingredientsIdList;

@@ -11,7 +11,6 @@ public class IngredientClient extends RestClient {
     @Step("GET getIngredients")
     public ValidatableResponse getIngredients(String accessToken) {
         return given()
-                .log().all()
                 .spec(getRequestSpecification(accessToken))
                 .when()
                 .get("/ingredients")

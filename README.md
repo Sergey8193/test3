@@ -67,7 +67,6 @@ src
 |   |   |   |   |   |-- IngredientsSuccessInfo.java
 |   |   |   |   |-- order
 |   |   |   |   |   |-- CreateOrderOrderData.java
-|   |   |   |   |   |-- CreateOrderSuccessInfo.java
 |   |   |   |   |   |-- GetOrdersOrderData.java
 |   |   |   |   |   |-- GetOrdersSuccessInfo.java
 |   |   |   |   |   |-- OrderClient.java

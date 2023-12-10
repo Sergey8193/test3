@@ -9,7 +9,7 @@ import praktikum.stellarburgers.pom.page.*;
         LoginPageTest.class,
         MainPageBurgerAssemblyTest.class,
         MainPageConstructorSectionsTest.class,
-        OrderHistoryPage.class,
+        OrderHistoryPageTest.class,
         ProfilePageTest.class,
         RegisterPageTest.class
 })

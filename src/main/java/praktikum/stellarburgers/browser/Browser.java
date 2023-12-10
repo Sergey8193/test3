@@ -55,8 +55,6 @@ public class Browser {
                 ? "CHROME"
                 : System.getProperty("browser").toUpperCase();
 
-        System.out.println("System.getProperty(\"browser\").toUpperCase(): " + System.getProperty("browser"));
-
         BrowserType driverType = Objects.equals(browserType, BY_BROWSER_SYSTEM_PROPERTY)
                 ? BrowserType.valueOf(systemProperty)
                 : browserType;

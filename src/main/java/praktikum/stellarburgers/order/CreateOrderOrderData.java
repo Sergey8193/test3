@@ -1,11 +1,12 @@
 package praktikum.stellarburgers.order;
 
 import praktikum.stellarburgers.user.User;
+import praktikum.stellarburgers.ingredient.IngredientData;
 
 import java.util.List;
 
-public class CreateOrderOrderData<T> {
-    private List<T> ingredients;
+public class CreateOrderOrderData {
+    private List<IngredientData> ingredients;
     private String _id;
     private User owner;
     private String status;
@@ -15,10 +16,10 @@ public class CreateOrderOrderData<T> {
     private Integer number;
     private Integer price;
 
-    public List<T> getIngredients() {
+    public List<IngredientData> getIngredients() {
         return ingredients;
     }
-    public void setIngredients(List<T> ingredients) {
+    public void setIngredients(List<IngredientData> ingredients) {
         this.ingredients = ingredients;
     }
 

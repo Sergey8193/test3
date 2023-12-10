@@ -27,7 +27,6 @@ public class OrderClient extends RestClient {
                 : data;
         return given()
                 .spec(getRequestSpecification(accessToken))
-//                .spec(requestSpecification)
                 .body(orderData)
                 .when()
                 .post(ORDER_URL)

@@ -89,8 +89,6 @@ public class BaseWait {
                     "input pr-6 pl-6 input_type_text input_size_default input_status_active",
                     "input pr-6 pl-6 input_type_password input_size_default input_status_active"
             };
-            System.out.print("inputLockers: ");
-            System.out.println(inputLockers);
 
             String oldInputClass = "text input__textfield text_type_main-default input__textfield-disabled";
             String newInputClass = "text input__textfield text_type_main-default input__textfield-enabled";
@@ -130,8 +128,6 @@ public class BaseWait {
             lockers.addAll(containers);
             lockers.addAll(contents);
             lockers.addAll(overlays);
-
-            System.out.println(lockers);
 
             for (WebElement locker : lockers) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].className = '';", locker);

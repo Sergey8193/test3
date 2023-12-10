@@ -6,12 +6,12 @@ WEB UI TESTING A TRAINING SERVICE
 
 ## Description
 
-Project uses
+**Project stack**
 - Java 11
 - JUnit 4.13.2
 - Selenium 4.16.0
 
-Supported browsers
+**Supported browsers**
 - Google Chrome
 - Yandex Browser
 - Microsoft Edge

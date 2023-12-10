@@ -65,7 +65,7 @@ public class LoginPageTest extends BaseTest {
     @Test
     @DisplayName("Login user")
     @Description("Login user using 'Sign in' Link on 'Password recovery' Page")
-    public void loginUsingLoginLinkONPasswordRecoveryPage() {
+    public void loginUsingLoginLinkOnPasswordRecoveryPage() {
         mainPage = mainPage
                 .clickPersonalAreaLink()
                 .waitUntilLoginPageToBeDisplayed()

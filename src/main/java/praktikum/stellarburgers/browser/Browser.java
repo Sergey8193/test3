@@ -19,10 +19,7 @@ public class Browser {
 
     private static ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
-//        options.addArguments("--remote-allow-origins=*");
-//        options.addArguments("start-maximized");
-//        options.addArguments("--headless");
+        options.addArguments("start-maximized");
         return options;
     }
 
@@ -30,8 +27,7 @@ public class Browser {
         ChromeOptions options = getChromeOptions();
         switch (getOperatingSystem()) {
             case MAC_OS:
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-mac");
-                //System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver-mac");
+                System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver-mac");
                 options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
                 break;
             case WINDOWS:
@@ -45,9 +41,7 @@ public class Browser {
     }
 
     private static FirefoxOptions getFirefoxOptions() {
-        FirefoxOptions options = new FirefoxOptions();
-         //options.addArguments("-headless");
-        return options;
+        return new FirefoxOptions();
     }
 
     public static WebDriver getDriver(BrowserType browserType) {

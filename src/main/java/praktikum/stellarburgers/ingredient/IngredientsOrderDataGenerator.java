@@ -79,7 +79,6 @@ public class IngredientsOrderDataGenerator {
         final int MAIN_COUNT = generateInt(1, MAX_MAIN_COUNT);
 
         Faker faker = new Faker();
-        // String ingredientId = faker.internet().uuid();
         String ingredientId = faker.random().hex(24);
 
         ingredientsIdList.add(ingredientId);

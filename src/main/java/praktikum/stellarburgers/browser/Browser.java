@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Objects;
@@ -31,7 +30,7 @@ public class Browser {
         ChromeOptions options = getChromeOptions();
         switch (getOperatingSystem()) {
             case MAC_OS:
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-mac-mac");
+                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-mac");
                 //System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver-mac");
                 options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
                 break;
@@ -39,6 +38,7 @@ public class Browser {
                 System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
                 break;
             case LINUX:
+                System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver-linux");
             case UNSUPPORTED_OS: break;
         }
         return options;

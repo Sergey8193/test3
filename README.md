@@ -80,7 +80,6 @@ src
 |   |   |   |   |   |-- page
 |   |   |   |   |   |   |-- LoginPage.java
 |   |   |   |   |   |   |-- MainPage.java
-|   |   |   |   |   |   |-- OrderFeedPage.java
 |   |   |   |   |   |   |-- OrderHistoryPage.java
 |   |   |   |   |   |   |-- PasswordRecoveryPage.java
 |   |   |   |   |   |   |-- ProfilePage.java
@@ -91,14 +90,12 @@ src
 |   |   |   |   |   |-- UserContactInfo.java
 |   |   |   |   |   |-- UserCredentials.java
 |   |   |   |   |   |-- UserDataGenerator.java
-|   |   |   |   |   |-- UserRegistratioinData.java
-|   |   |   |   |   |-- UserCuccessInfo.java
-|   |   |   |   |   |-- UserToken.java
-|   |-- java
-|   |   |-- resources
-|   |   |   |-- yandexdriver.exe
-|   |   |   |-- yandexdriver-linux
-|   |   |   |-- yandexdriver-mac
+|   |   |   |   |   |-- UserRegistrationData.java
+|   |   |   |   |   |-- UserSuccessInfo.java
+|   |   resources
+|   |   |-- yandexdriver.exe
+|   |   |-- yandexdriver-linux
+|   |   |-- yandexdriver-mac
 |-- test
 |   |-- java
 |   |   |-- praktikum
@@ -120,6 +117,7 @@ src
 |   |   |   |   |   |   |-- ProfilePageTest.java
 |   |   |   |   |   |   |-- RegisterPageParamTest.java
 |   |   |   |   |   |   |-- RegisterPageTest.java
+|   |   |   |   |-- WebUiParamTestLauncher.java
 |   |   |   |   |-- WebUiTestLauncher.java
 ```
 

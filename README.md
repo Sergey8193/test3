@@ -9,7 +9,7 @@ WEB UI TESTING A TRAINING SERVICE
 **Project stack**
 - Java 11
 - JUnit 4.13.2
-- Selenium 4.16.0
+- Selenium 4.15.0
 
 **Supported browsers**
 - Google Chrome
